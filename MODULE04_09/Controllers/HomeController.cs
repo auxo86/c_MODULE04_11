@@ -21,6 +21,8 @@ namespace MODULE04_09.Controllers
         public ActionResult ProductByID(int id)
         {
             ProductSystem sys = new ProductSystem();
+            //result不再是Product物件，而是ProductViewModel物件
+            //剩下三個欄位而已
             var result = sys.GetProductByID(id);
 
             return View(result);
