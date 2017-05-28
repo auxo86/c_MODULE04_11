@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace MODULE04_09.ViewModels
 {
+    //資料的源頭
     public class ProductViewModel
     {
         public int ProductID { get; set; }
