@@ -26,6 +26,27 @@ namespace MODULE04_09.Models
         //}
 
         //這裡要注意回傳型別，是ProductViewModel，不是Product喔~
+        public ProductViewModel GetProductByIdNew(int id)
+        {
+            //這裡是說，我只要Product中的三個欄位的資料，不要全部
+            NorthwindEntities_new db = new NorthwindEntities_new();
+            var query = from p in db.Products
+                        where p.ProductID == id
+                        //這裡new了ProductViewModel物件，所以query也是ProductViewModel物件
+                        select new ProductViewModel
+                        {
+                            ProductID = p.ProductID,
+                            ProductName = p.ProductName,
+                            UnitPrice = p.UnitPrice
+                        };
+            //只列第一筆ProductViewModel
+            var result = query.First();
+
+            //所以result是ProductViewModel物件
+            return result;
+        }
+
+        //這裡要注意回傳型別，是ProductViewModel，不是Product喔~
         public ProductViewModel GetProductByID(int id)
         {
             //這裡是說，我只要Product中的三個欄位的資料，不要全部
@@ -35,9 +56,9 @@ namespace MODULE04_09.Models
                         //這裡new了ProductViewModel物件，所以query也是ProductViewModel物件
                         select new ProductViewModel
                         {
-                            ProductID=p.ProductID,
-                            ProductName=p.ProductName,
-                            UnitPrice=p.UnitPrice
+                            ProductID = p.ProductID,
+                            ProductName = p.ProductName,
+                            UnitPrice = p.UnitPrice
                         };
 
             //只列第一筆ProductViewModel

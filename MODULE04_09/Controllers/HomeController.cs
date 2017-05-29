@@ -16,6 +16,13 @@ namespace MODULE04_09.Controllers
             return View();
         }
 
+        public ActionResult ProductById_new(int id)
+        {
+            ProductSystem sys = new ProductSystem();
+            var result = sys.GetProductByIdNew(id);
+            return View(result);
+        }
+        
         //Get: Home/ProductByID/1
         //Get: Home/ProductByID?ID=1
         public ActionResult ProductByID(int id)

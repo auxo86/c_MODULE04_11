@@ -99,6 +99,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DAL\ModelNorthwind.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelNorthwind.edmx</DependentUpon>
+      <LastGenOutput>ModelNorthwind.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DAL\ModelNorthwind.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelNorthwind.edmx</DependentUpon>
+      <LastGenOutput>ModelNorthwind.cs</LastGenOutput>
+    </Content>
     <Content Include="DAL\MWModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>MWModel.edmx</DependentUpon>
@@ -110,6 +120,13 @@
       <LastGenOutput>MWModel.cs</LastGenOutput>
     </Content>
     <Content Include="Global.asax" />
+    <EntityDeploy Include="DAL\ModelNorthwind.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelNorthwind.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="DAL\ModelNorthwind.edmx.diagram">
+      <DependentUpon>ModelNorthwind.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -125,16 +142,31 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="DAL\Category.cs">
-      <DependentUpon>MWModel.tt</DependentUpon>
+      <DependentUpon>ModelNorthwind.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Customer.cs">
-      <DependentUpon>MWModel.tt</DependentUpon>
+      <DependentUpon>ModelNorthwind.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\CustomerDemographic.cs">
-      <DependentUpon>MWModel.tt</DependentUpon>
+      <DependentUpon>ModelNorthwind.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Employee.cs">
-      <DependentUpon>MWModel.tt</DependentUpon>
+      <DependentUpon>ModelNorthwind.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\ModelNorthwind.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelNorthwind.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\ModelNorthwind.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelNorthwind.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\ModelNorthwind.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelNorthwind.edmx</DependentUpon>
     </Compile>
     <Compile Include="DAL\MWModel.Context.cs">
       <AutoGen>True</AutoGen>
@@ -152,25 +184,25 @@
       <DependentUpon>MWModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="DAL\Order.cs">
-      <DependentUpon>MWModel.tt</DependentUpon>
+      <DependentUpon>ModelNorthwind.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Order_Detail.cs">
-      <DependentUpon>MWModel.tt</DependentUpon>
+      <DependentUpon>ModelNorthwind.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Product.cs">
-      <DependentUpon>MWModel.tt</DependentUpon>
+      <DependentUpon>ModelNorthwind.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Region.cs">
-      <DependentUpon>MWModel.tt</DependentUpon>
+      <DependentUpon>ModelNorthwind.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Shipper.cs">
-      <DependentUpon>MWModel.tt</DependentUpon>
+      <DependentUpon>ModelNorthwind.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Supplier.cs">
-      <DependentUpon>MWModel.tt</DependentUpon>
+      <DependentUpon>ModelNorthwind.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Territory.cs">
-      <DependentUpon>MWModel.tt</DependentUpon>
+      <DependentUpon>ModelNorthwind.tt</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -191,6 +223,7 @@
     </Content>
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Home\ProductByID.cshtml" />
+    <Content Include="Views\Home\ProductById_new.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
